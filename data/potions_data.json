@@ -2,9 +2,9 @@
   "version": "2.0",
   "metadata": {
     "created": "2025-05-25T20:37:02.182586",
-    "last_modified": "2025-05-25T23:31:00.600158",
+    "last_modified": "2025-05-26T19:23:25.914486",
     "total_potions": 11,
-    "total_ingredients": 56,
+    "total_ingredients": 57,
     "migration_date": "2025-05-25T20:37:02.182621",
     "source_file": "structure_potions.json"
   },
@@ -1065,6 +1065,19 @@
         "Filtre",
         "Substrat",
         "Médicament"
+      ]
+    },
+    "pissenlit": {
+      "id": "pissenlit",
+      "name": "Pissenlit",
+      "effect": "Aucun",
+      "type": "négatif",
+      "quality": "Mineur",
+      "duration": "Instantané",
+      "rarity": "Commun",
+      "description": "",
+      "allowed_potion_types": [
+        "Potion"
       ]
     }
   },
