@@ -1,0 +1,1205 @@
+{
+  "version": "2.0",
+  "metadata": {
+    "created": "2025-05-25T20:37:02.182586",
+    "last_modified": "2025-05-25T23:31:00.600158",
+    "total_potions": 11,
+    "total_ingredients": 56,
+    "migration_date": "2025-05-25T20:37:02.182621",
+    "source_file": "structure_potions.json"
+  },
+  "config": {
+    "auto_save": true,
+    "backup_frequency": 10,
+    "theme": "light",
+    "language": "fr"
+  },
+  "bases": {
+    "eau": {
+      "id": "eau",
+      "name": "Eau",
+      "potion_type": "Potion",
+      "description": "Base liquide standard pour potions curatives et bénéfiques",
+      "rarity": "Commun"
+    },
+    "huile": {
+      "id": "huile",
+      "name": "Huile",
+      "potion_type": "Poison",
+      "description": "Base huileuse pour poisons et toxines",
+      "rarity": "Commun"
+    },
+    "pate": {
+      "id": "pate",
+      "name": "Pâte",
+      "potion_type": "Onguent",
+      "description": "Base épaisse pour applications topiques",
+      "rarity": "Commun"
+    },
+    "vin": {
+      "id": "vin",
+      "name": "Vin alchimique",
+      "potion_type": "Filtre",
+      "description": "Base alcoolisée magique pour filtres d'amour et enchantements",
+      "rarity": "Rare"
+    },
+    "cendre": {
+      "id": "cendre",
+      "name": "Cendre",
+      "potion_type": "Substrat",
+      "description": "Base poudreuse pour rituels et invocations",
+      "rarity": "Commun"
+    },
+    "quartz": {
+      "id": "quartz",
+      "name": "Poudre de quartz",
+      "potion_type": "Médicament",
+      "description": "Base cristalline purifiée pour médicaments puissants",
+      "rarity": "Rare"
+    }
+  },
+  "ingredients": {
+    "sauge": {
+      "id": "sauge",
+      "name": "Sauge",
+      "effect": "Purification",
+      "type": "positif",
+      "quality": "Mineur",
+      "duration": "Instantané",
+      "rarity": "Commun",
+      "description": "Herbe purificatrice commune, neutralise les énergies négatives",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "ortie": {
+      "id": "ortie",
+      "name": "Ortie",
+      "effect": "Enchevêtrement",
+      "type": "négatif",
+      "quality": "Mineur",
+      "duration": "1 minute",
+      "rarity": "Commun",
+      "description": "Plante urticante provoquant l'enchevêtrement des membres",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "menthe": {
+      "id": "menthe",
+      "name": "Menthe",
+      "effect": "Soûl",
+      "type": "négatif",
+      "quality": "Mineur",
+      "duration": "1 minute",
+      "rarity": "Commun",
+      "description": "Ingrédient négatif de qualité mineur",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "belladone": {
+      "id": "belladone",
+      "name": "Belladone",
+      "effect": "Empoisonné",
+      "type": "négatif",
+      "quality": "Majeur",
+      "duration": "Instantané",
+      "rarity": "Rare",
+      "description": "Plante mortellement toxique, cause empoisonnement sévère",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "mandragore": {
+      "id": "mandragore",
+      "name": "Mandragore",
+      "effect": "Assommé Légendaire",
+      "type": "négatif",
+      "quality": "Légendaire",
+      "duration": "Jusqu'à réveil",
+      "rarity": "Légendaire",
+      "description": "Racine légendaire aux cris mortels, provoque un sommeil profond",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "lotus": {
+      "id": "lotus",
+      "name": "Lotus",
+      "effect": "Charme / Séduction",
+      "type": "positif",
+      "quality": "Mineur",
+      "duration": "1 minute",
+      "rarity": "Commun",
+      "description": "Fleur sacrée aux propriétés enchanteresses",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "feuilles_de_larbre_de_vie": {
+      "id": "feuilles_de_larbre_de_vie",
+      "name": "Feuilles de l'Arbre de Vie",
+      "effect": "Purification mythique",
+      "type": "positif",
+      "quality": "Mythique",
+      "duration": "Instantané",
+      "rarity": "Mythique",
+      "description": "Feuilles divines de l'Arbre de Vie éternel, purification absolue",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "camomille": {
+      "id": "camomille",
+      "name": "Camomille",
+      "effect": "Sommeil",
+      "type": "négatif",
+      "quality": "Mineur",
+      "duration": "Jusqu'à réveil",
+      "rarity": "Commun",
+      "description": "Fleur apaisante induisant un sommeil naturel",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "thym": {
+      "id": "thym",
+      "name": "Thym",
+      "effect": "Lenteur / Affaibli",
+      "type": "négatif",
+      "quality": "Mineur",
+      "duration": "1 minute",
+      "rarity": "Commun",
+      "description": "Herbe aromatique ralentissant les mouvements",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "trefle": {
+      "id": "trefle",
+      "name": "Trèfle",
+      "effect": "Chance",
+      "type": "positif",
+      "quality": "Mineur",
+      "duration": "1 minute",
+      "rarity": "Commun",
+      "description": "Plante porte-bonheur augmentant la fortune",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "rose": {
+      "id": "rose",
+      "name": "Rose",
+      "effect": "Séduction / Manipulation",
+      "type": "positif",
+      "quality": "Majeur",
+      "duration": "1 heure",
+      "rarity": "Rare",
+      "description": "Fleur noble aux pouvoirs de séduction majeurs",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "edelweiss": {
+      "id": "edelweiss",
+      "name": "Edelweiss",
+      "effect": "Résistance au froid",
+      "type": "positif",
+      "quality": "Majeur",
+      "duration": "1 heure",
+      "rarity": "Rare",
+      "description": "Fleur des cimes offrant résistance aux températures glaciales",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "ginseng": {
+      "id": "ginseng",
+      "name": "Ginseng",
+      "effect": "Régénaration",
+      "type": "positif",
+      "quality": "Majeur",
+      "duration": "1 heure",
+      "rarity": "Rare",
+      "description": "Racine orientale aux propriétés régénératrices",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "fleur_de_lune": {
+      "id": "fleur_de_lune",
+      "name": "Fleur de lune",
+      "effect": "Sommeil",
+      "type": "positif",
+      "quality": "Légendaire",
+      "duration": "Jusqu'à réveil",
+      "rarity": "Légendaire",
+      "description": "Fleur nocturne légendaire provoquant un sommeil réparateur",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "fleur_spectrale": {
+      "id": "fleur_spectrale",
+      "name": "Fleur spectrale",
+      "effect": "Aveuglement",
+      "type": "positif",
+      "quality": "Mythique",
+      "duration": "24 heures",
+      "rarity": "Mythique",
+      "description": "Ingrédient positif de qualité mythique",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "herbe_feu": {
+      "id": "herbe_feu",
+      "name": "Herbe-Feu",
+      "effect": "Rage",
+      "type": "positif",
+      "quality": "Majeur",
+      "duration": "1 heure",
+      "rarity": "Rare",
+      "description": "Ingrédient positif de qualité majeur",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "pollen_de_lumiere_eternelle": {
+      "id": "pollen_de_lumiere_eternelle",
+      "name": "Pollen de lumière éternelle",
+      "effect": "Paralysie magique",
+      "type": "négatif",
+      "quality": "Mythique",
+      "duration": "24 heures",
+      "rarity": "Mythique",
+      "description": "Ingrédient négatif de qualité mythique",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "racine_de_loubli": {
+      "id": "racine_de_loubli",
+      "name": "Racine de l'oubli",
+      "effect": "Amnésie",
+      "type": "négatif",
+      "quality": "Légendaire",
+      "duration": "Un cycle",
+      "rarity": "Légendaire",
+      "description": "Ingrédient négatif de qualité légendaire",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "aubepine_de_minuit": {
+      "id": "aubepine_de_minuit",
+      "name": "Aubépine de minuit",
+      "effect": "Peur",
+      "type": "négatif",
+      "quality": "Majeur",
+      "duration": "1 heure",
+      "rarity": "Rare",
+      "description": "Ingrédient négatif de qualité majeur",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "feuilles_de_laurier": {
+      "id": "feuilles_de_laurier",
+      "name": "Feuilles de laurier",
+      "effect": "Protection contre la peur",
+      "type": "positif",
+      "quality": "Mineur",
+      "duration": "1 minute",
+      "rarity": "Commun",
+      "description": "Ingrédient positif de qualité mineur",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "origan": {
+      "id": "origan",
+      "name": "Origan",
+      "effect": "Force +1 dégât",
+      "type": "positif",
+      "quality": "Mineur",
+      "duration": "1 minute",
+      "rarity": "Commun",
+      "description": "Ingrédient positif de qualité mineur",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "citronnelle": {
+      "id": "citronnelle",
+      "name": "Citronnelle",
+      "effect": "Affaibli / Lenteur",
+      "type": "négatif",
+      "quality": "Mineur",
+      "duration": "1 minute",
+      "rarity": "Commun",
+      "description": "Ingrédient négatif de qualité mineur",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "estragon": {
+      "id": "estragon",
+      "name": "Estragon",
+      "effect": "Sommeil",
+      "type": "négatif",
+      "quality": "Majeur",
+      "duration": "1 heure ou jusqu'à réveil",
+      "rarity": "Rare",
+      "description": "Ingrédient négatif de qualité majeur",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "liane_des_murmures": {
+      "id": "liane_des_murmures",
+      "name": "Liane des murmures",
+      "effect": "Corruption",
+      "type": "négatif",
+      "quality": "Majeur",
+      "duration": "1 heure",
+      "rarity": "Rare",
+      "description": "Ingrédient négatif de qualité majeur",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "fougere_des_revenants": {
+      "id": "fougere_des_revenants",
+      "name": "Fougère des revenants",
+      "effect": "Domptage",
+      "type": "positif",
+      "quality": "Légendaire",
+      "duration": "Instantané",
+      "rarity": "Légendaire",
+      "description": "Ingrédient positif de qualité légendaire",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "ortiga_negra": {
+      "id": "ortiga_negra",
+      "name": "Ortiga Negra",
+      "effect": "Fracture / Démembrement",
+      "type": "négatif",
+      "quality": "Majeur",
+      "duration": "Jusqu'à guérison",
+      "rarity": "Rare",
+      "description": "Ingrédient négatif de qualité majeur",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "goutte_de_cendre": {
+      "id": "goutte_de_cendre",
+      "name": "Goutte-de-cendre",
+      "effect": "Brise-Bouclier ",
+      "type": "négatif",
+      "quality": "Mythique",
+      "duration": "Instantané",
+      "rarity": "Mythique",
+      "description": "Ingrédient négatif de qualité mythique",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "brume_argent": {
+      "id": "brume_argent",
+      "name": "Brume-argent",
+      "effect": "Étourdi + Vision altérée",
+      "type": "négatif",
+      "quality": "Légendaire",
+      "duration": "Un cycle",
+      "rarity": "Légendaire",
+      "description": "Ingrédient négatif de qualité légendaire",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "chardon_de_lenvouteuse": {
+      "id": "chardon_de_lenvouteuse",
+      "name": "Chardon de l'envouteuse",
+      "effect": "Enchevêtrement",
+      "type": "négatif",
+      "quality": "Majeur",
+      "duration": "1 heure",
+      "rarity": "Rare",
+      "description": "Ingrédient négatif de qualité majeur",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "herbe_de_minuit": {
+      "id": "herbe_de_minuit",
+      "name": "Herbe de minuit",
+      "effect": "Sommeil",
+      "type": "négatif",
+      "quality": "Légendaire",
+      "duration": "Un cycle",
+      "rarity": "Légendaire",
+      "description": "Ingrédient négatif de qualité légendaire",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "veine_du_pendu": {
+      "id": "veine_du_pendu",
+      "name": "Veine du pendu",
+      "effect": "Égorgement",
+      "type": "négatif",
+      "quality": "Légendaire",
+      "duration": "Instantané",
+      "rarity": "Légendaire",
+      "description": "Ingrédient négatif de qualité légendaire",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "epine_du_regard_noir": {
+      "id": "epine_du_regard_noir",
+      "name": "Épine du regard noir",
+      "effect": "Saignement",
+      "type": "positif",
+      "quality": "Majeur",
+      "duration": "Instantané",
+      "rarity": "Rare",
+      "description": "Ingrédient positif de qualité majeur",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "myrrhe_du_sabbat": {
+      "id": "myrrhe_du_sabbat",
+      "name": "Myrrhe du sabbat",
+      "effect": "Provocation",
+      "type": "négatif",
+      "quality": "Mythique",
+      "duration": "Instantané",
+      "rarity": "Mythique",
+      "description": "Ingrédient négatif de qualité mythique",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "souffle_de_morgane": {
+      "id": "souffle_de_morgane",
+      "name": "Souffle de Morgane",
+      "effect": "Charme / Séduction",
+      "type": "positif",
+      "quality": "Légendaire",
+      "duration": "Un cycle",
+      "rarity": "Légendaire",
+      "description": "Ingrédient positif de qualité légendaire",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "lierre_de_penombre": {
+      "id": "lierre_de_penombre",
+      "name": "Lierre de pénombre",
+      "effect": "Invisibilité",
+      "type": "positif",
+      "quality": "Majeur",
+      "duration": "1 heure",
+      "rarity": "Rare",
+      "description": "Ingrédient positif de qualité majeur",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "herbe_de_langue_scellee": {
+      "id": "herbe_de_langue_scellee",
+      "name": "Herbe de langue scellée",
+      "effect": "Silence",
+      "type": "négatif",
+      "quality": "Majeur",
+      "duration": "1 heure",
+      "rarity": "Rare",
+      "description": "Ingrédient négatif de qualité majeur",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "feuille_doubli_volontaire": {
+      "id": "feuille_doubli_volontaire",
+      "name": "Feuille d'oubli volontaire",
+      "effect": "Amnésie / Oubli",
+      "type": "positif",
+      "quality": "Majeur",
+      "duration": "1 heure",
+      "rarity": "Rare",
+      "description": "Ingrédient positif de qualité majeur",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "mousse_des_sabbats": {
+      "id": "mousse_des_sabbats",
+      "name": "Mousse des sabbats",
+      "effect": "Invocation de créature",
+      "type": "positif",
+      "quality": "Majeur",
+      "duration": "1 heure",
+      "rarity": "Rare",
+      "description": "Ingrédient positif de qualité majeur",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "ronce_des_pactes": {
+      "id": "ronce_des_pactes",
+      "name": "Ronce des pactes",
+      "effect": "Rage ciblée",
+      "type": "négatif",
+      "quality": "Légendaire",
+      "duration": "Un cycle",
+      "rarity": "Légendaire",
+      "description": "Ingrédient négatif de qualité légendaire",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "fleur_de_la_comete": {
+      "id": "fleur_de_la_comete",
+      "name": "Fleur de la comète",
+      "effect": "Explosion magique",
+      "type": "négatif",
+      "quality": "Mythique",
+      "duration": "Instantané",
+      "rarity": "Mythique",
+      "description": "Ingrédient négatif de qualité mythique",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "corne_de_saturne": {
+      "id": "corne_de_saturne",
+      "name": "Corne-de-saturne",
+      "effect": "Lenteur / Affaibli",
+      "type": "négatif",
+      "quality": "Mythique",
+      "duration": "24h",
+      "rarity": "Mythique",
+      "description": "Ingrédient négatif de qualité mythique",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "fleur_astrale": {
+      "id": "fleur_astrale",
+      "name": "Fleur astrale",
+      "effect": "Aveuglement + Peur",
+      "type": "négatif",
+      "quality": "Légendaire",
+      "duration": "Un cycle",
+      "rarity": "Légendaire",
+      "description": "Ingrédient négatif de qualité légendaire",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "herbe_des_mille_noms": {
+      "id": "herbe_des_mille_noms",
+      "name": "Herbe des mille noms",
+      "effect": "Résistance temporaire à tous les effets",
+      "type": "positif",
+      "quality": "Mythique",
+      "duration": "1 minute",
+      "rarity": "Mythique",
+      "description": "Ingrédient positif de qualité mythique",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "feuillage_dananke": {
+      "id": "feuillage_dananke",
+      "name": "Feuillage d'Ananké",
+      "effect": "Vision prophétique",
+      "type": "positif",
+      "quality": "Mythique",
+      "duration": "Voir scénarisation",
+      "rarity": "Mythique",
+      "description": "Ingrédient positif de qualité mythique",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "sang_de_la_lune": {
+      "id": "sang_de_la_lune",
+      "name": "Sang de la lune",
+      "effect": "Saignement légendaire",
+      "type": "négatif",
+      "quality": "Légendaire",
+      "duration": "Instantané",
+      "rarity": "Légendaire",
+      "description": "Ingrédient négatif de qualité légendaire",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "coeur_de_nuit": {
+      "id": "coeur_de_nuit",
+      "name": "Coeur-de-nuit",
+      "effect": "Hallucinations",
+      "type": "négatif",
+      "quality": "Majeur",
+      "duration": "1 heure",
+      "rarity": "Rare",
+      "description": "Ingrédient négatif de qualité majeur",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "artherleaf": {
+      "id": "artherleaf",
+      "name": "Artherleaf",
+      "effect": "Voyage astral",
+      "type": "positif",
+      "quality": "Légendaire",
+      "duration": "Voir scénarisation",
+      "rarity": "Légendaire",
+      "description": "Ingrédient positif de qualité légendaire",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "rue_des_fees": {
+      "id": "rue_des_fees",
+      "name": "Rue des fées",
+      "effect": "Perception du Petit Peuple",
+      "type": "positif",
+      "quality": "Majeur",
+      "duration": "1 heure",
+      "rarity": "Rare",
+      "description": "Ingrédient positif de qualité majeur",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "lys": {
+      "id": "lys",
+      "name": "Lys",
+      "effect": "Soins +1 PV",
+      "type": "positif",
+      "quality": "Mineur",
+      "duration": "Instantané",
+      "rarity": "Commun",
+      "description": "Fleur pure aux propriétés curatives légères",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "herbe_de_phoenix": {
+      "id": "herbe_de_phoenix",
+      "name": "Herbe de Phoenix",
+      "effect": "Soins +4 PV",
+      "type": "positif",
+      "quality": "Légendaire",
+      "duration": "Instantané",
+      "rarity": "Légendaire",
+      "description": "Ingrédient positif de qualité légendaire",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "trama": {
+      "id": "trama",
+      "name": "Trama",
+      "effect": "Soins +2 PV",
+      "type": "positif",
+      "quality": "Majeur",
+      "duration": "Instantané",
+      "rarity": "Rare",
+      "description": "Ingrédient positif de qualité majeur",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "belladone_blanche": {
+      "id": "belladone_blanche",
+      "name": "Belladone Blanche",
+      "effect": "Antidote",
+      "type": "positif",
+      "quality": "Majeur",
+      "duration": "Instantané",
+      "rarity": "Rare",
+      "description": "Variante pure de belladone neutralisant les poisons",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "girofle": {
+      "id": "girofle",
+      "name": "Girofle",
+      "effect": "Mana -1 pt",
+      "type": "négatif",
+      "quality": "Mineur",
+      "duration": "Instantané",
+      "rarity": "Commun",
+      "description": "Ingrédient négatif de qualité mineur",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "bile_de_vieux": {
+      "id": "bile_de_vieux",
+      "name": "Bile de vieux",
+      "effect": "Mana +1 pt",
+      "type": "positif",
+      "quality": "Mineur",
+      "duration": "Instantané",
+      "rarity": "Commun",
+      "description": "Ingrédient positif de qualité mineur",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "feuille_darbre": {
+      "id": "feuille_darbre",
+      "name": "Feuille d'arbre",
+      "effect": "PV -1 pt",
+      "type": "négatif",
+      "quality": "Mineur",
+      "duration": "Instantané",
+      "rarity": "Commun",
+      "description": "Ingrédient négatif de qualité mineur",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    },
+    "ciguë_de_la_lune_brisée": {
+      "id": "ciguë_de_la_lune_brisée",
+      "name": "Ciguë de la lune brisée",
+      "effect": "Empoisonné + Étourdi",
+      "type": "négatif",
+      "quality": "Légendaire",
+      "duration": "Un cycle",
+      "rarity": "Légendaire",
+      "description": "Ingrédient négatif de qualité légendaire",
+      "allowed_potion_types": [
+        "Potion",
+        "Poison",
+        "Onguent",
+        "Filtre",
+        "Substrat",
+        "Médicament"
+      ]
+    }
+  },
+  "potions": {
+    "potion_1": {
+      "id": "potion_1",
+      "name": "Potion Mineur de Purification et Enchevêtrement",
+      "base": "eau",
+      "ingredient1": "sauge",
+      "ingredient2": "ortie",
+      "category": "Mineur",
+      "created_at": "2025-05-25T20:37:02.185752",
+      "is_favorite": false,
+      "notes": "Migré depuis l'ancien format le 25/05/2025"
+    },
+    "potion_2": {
+      "id": "potion_2",
+      "name": "Potion Mineur de Soins +1 PV et Mana -1 pt",
+      "base": "eau",
+      "ingredient1": "lys",
+      "ingredient2": "girofle",
+      "category": "Mineur",
+      "created_at": "2025-05-25T20:37:02.185832",
+      "is_favorite": false,
+      "notes": "Migré depuis l'ancien format le 25/05/2025"
+    },
+    "potion_3": {
+      "id": "potion_3",
+      "name": "Potion Mineur de Mana +1 pt et PV -1 pt",
+      "base": "eau",
+      "ingredient1": "bile_de_vieux",
+      "ingredient2": "feuille_darbre",
+      "category": "Mineur",
+      "created_at": "2025-05-25T20:37:02.185888",
+      "is_favorite": false,
+      "notes": "Migré depuis l'ancien format le 25/05/2025"
+    },
+    "potion_4": {
+      "id": "potion_4",
+      "name": "Poison Mineur de Purification et Enchevêtrement",
+      "base": "huile",
+      "ingredient1": "sauge",
+      "ingredient2": "ortie",
+      "category": "Mineur",
+      "created_at": "2025-05-25T20:37:02.185936",
+      "is_favorite": false,
+      "notes": "Migré depuis l'ancien format le 25/05/2025"
+    },
+    "potion_5": {
+      "id": "potion_5",
+      "name": "Onguent Mineur de Purification et Enchevêtrement",
+      "base": "pate",
+      "ingredient1": "sauge",
+      "ingredient2": "ortie",
+      "category": "Mineur",
+      "created_at": "2025-05-25T20:37:02.185983",
+      "is_favorite": false,
+      "notes": "Migré depuis l'ancien format le 25/05/2025"
+    },
+    "potion_6": {
+      "id": "potion_6",
+      "name": "Filtre Mineur de Purification et Enchevêtrement",
+      "base": "vin",
+      "ingredient1": "sauge",
+      "ingredient2": "ortie",
+      "category": "Mineur",
+      "created_at": "2025-05-25T20:37:02.186030",
+      "is_favorite": false,
+      "notes": "Migré depuis l'ancien format le 25/05/2025"
+    },
+    "potion_7": {
+      "id": "potion_7",
+      "name": "Substrat Mineur de Purification et Enchevêtrement",
+      "base": "cendre",
+      "ingredient1": "sauge",
+      "ingredient2": "ortie",
+      "category": "Mineur",
+      "created_at": "2025-05-25T20:37:02.186080",
+      "is_favorite": false,
+      "notes": "Migré depuis l'ancien format le 25/05/2025"
+    },
+    "potion_8": {
+      "id": "potion_8",
+      "name": "Potion Mineur de Séduction / Manipulation et Enchevêtrement",
+      "base": "eau",
+      "ingredient1": "rose",
+      "ingredient2": "ortie",
+      "category": "Mineur",
+      "created_at": "2025-05-25T20:37:02.186125",
+      "is_favorite": false,
+      "notes": "Migré depuis l'ancien format le 25/05/2025"
+    },
+    "potion_9": {
+      "id": "potion_9",
+      "name": "Médicament : Mineur de Purification et Enchevêtrement",
+      "base": "quartz",
+      "ingredient1": "sauge",
+      "ingredient2": "ortie",
+      "category": "Mineur",
+      "created_at": "2025-05-25T20:37:02.186173",
+      "is_favorite": false,
+      "notes": "Migré depuis l'ancien format le 25/05/2025"
+    },
+    "potion_10": {
+      "id": "potion_10",
+      "name": "Potion Mineur de Charme / Séduction et Empoisonné",
+      "base": "eau",
+      "ingredient1": "lotus",
+      "ingredient2": "belladone",
+      "category": "Mineur",
+      "created_at": "2025-05-25T20:37:02.186220",
+      "is_favorite": false,
+      "notes": "Migré depuis l'ancien format le 25/05/2025"
+    },
+    "potion_11": {
+      "id": "potion_11",
+      "name": "Onguent Majeur de Perception du Petit Peuple et Hallucinations",
+      "base": "pate",
+      "ingredient1": "rue_des_fees",
+      "ingredient2": "coeur_de_nuit",
+      "category": "Majeur",
+      "created_at": "2025-05-25T20:48:14.422403",
+      "is_favorite": false,
+      "notes": ""
+    }
+  },
+  "tags": [
+    "Curatif",
+    "Offensif",
+    "Défensif",
+    "Utilitaire",
+    "Rituel",
+    "Combat",
+    "Social",
+    "Exploration"
+  ],
+  "favorites": []
+}
